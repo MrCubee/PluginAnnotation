@@ -36,7 +36,7 @@
     <repositories>
         <repository>
             <id>arkadgames</id>
-            <url>http://nexus.arkadgames.net/repository/snapshots/</url>
+            <url>http://nexus.arkadgames.net/repository/minecraft/</url>
         </repository>
     </repositories>
 
