@@ -1,10 +1,10 @@
 package fr.mrcubee.annotation.spigot.config;
 
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
 
 import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
 
 public class ConfigAnnotation {
 
@@ -49,7 +49,7 @@ public class ConfigAnnotation {
     private static void loadField(FileConfiguration config, Object object, Field field, Config configValue) {
         Object value;
 
-        if (config == null  || object == null || field == null || configValue == null)
+        if (config == null || field == null || (!Modifier.isStatic(field.getModifiers()) && object == null) || configValue == null)
             return;
         if (!config.contains(configValue.path())) {
             configLog(field, configValue, null, ConfigLogType.NO_FOUND);
@@ -74,5 +74,13 @@ public class ConfigAnnotation {
         for (Object object : objects)
             for (Field field : object.getClass().getDeclaredFields())
                 loadField(fileConfiguration, object, field, field.getAnnotation(Config.class));
+    }
+
+    public static void loadClass(FileConfiguration fileConfiguration, Class<?>... classes) {
+        if (fileConfiguration == null || classes == null)
+            return;
+        for (Class<?> clazz : classes)
+            for (Field field : clazz.getDeclaredFields())
+                loadField(fileConfiguration, null, field, field.getAnnotation(Config.class));
     }
 }
