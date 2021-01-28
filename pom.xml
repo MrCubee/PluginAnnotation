@@ -7,27 +7,37 @@
     <groupId>fr.mrcubee.minecraft.library</groupId>
     <artifactId>plugin-annotation</artifactId>
     <version>1.0</version>
+    <packaging>jar</packaging>
+
+    <developers>
+        <developer>
+            <id>mrcubee</id>
+            <name>MrCubee</name>
+            <email>contact@mrcubee.fr</email>
+            <url>https://github.com/MrCubee</url>
+        </developer>
+    </developers>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
     <organization>
-        <name>ArkadGames</name>
-        <url>https://github.com/ArkadGamesNetwork</url>
+        <name>MrCubee</name>
+        <url>https://github.com/MrCubee</url>
     </organization>
 
     <distributionManagement>
         <repository>
-            <id>arkadgames</id>
-            <url>http://nexus.arkadgames.net/repository/minecraft/</url>
+            <id>mrcubee-public</id>
+            <url>http://nexus.mrcubee.net/repository/minecraft/</url>
             <uniqueVersion>false</uniqueVersion>
         </repository>
     </distributionManagement>
 
     <issueManagement>
         <system>github</system>
-        <url>https://github.com/ArkadGamesNetwork/PluginAnnotation/issues</url>
+        <url>https://github.com/MrCubee/PluginAnnotation/issues</url>
     </issueManagement>
 
     <name>PluginAnnotation</name>
@@ -35,8 +45,8 @@
 
     <repositories>
         <repository>
-            <id>arkadgames</id>
-            <url>http://nexus.arkadgames.net/repository/minecraft/</url>
+            <id>mrcubee-public</id>
+            <url>http://nexus.mrcubee.net/repository/minecraft/</url>
         </repository>
     </repositories>
 
@@ -51,7 +61,7 @@
 
     <build>
         <defaultGoal>clean install</defaultGoal>
-        <finalName>ScoreBoardLib</finalName>
+        <finalName>${pom.name}</finalName>
         <sourceDirectory>src</sourceDirectory>
         <plugins>
             <plugin>
