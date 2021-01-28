@@ -22,6 +22,9 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+    <name>PluginAnnotation</name>
+    <description>Library that simplifies the creation of a plugin.</description>
+
     <organization>
         <name>MrCubee</name>
         <url>https://github.com/MrCubee</url>
@@ -39,9 +42,6 @@
         <system>github</system>
         <url>https://github.com/MrCubee/PluginAnnotation/issues</url>
     </issueManagement>
-
-    <name>PluginAnnotation</name>
-    <description>Library that simplifies the creation of a plugin.</description>
 
     <repositories>
         <repository>
